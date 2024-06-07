@@ -4,8 +4,7 @@ project (mrmollusc)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY bin)
 add_executable(mrmollusc ../src/main.cpp)
 
-find_package(X11 REQUIRED)
+find_package(SDL2 REQUIRED)
+include_directories(${SDL2_INCLUDE_DIRS})
 
-include_directories(${X11_INCLUDE_DIR})
-target_link_libraries(mrmollusc ${X11_LIBRARIES})
-
+target_link_libraries(mrmollusc ${SDL2_LIBRARIES})
